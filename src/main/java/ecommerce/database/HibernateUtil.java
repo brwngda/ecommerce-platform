@@ -1,4 +1,4 @@
-package ecommerce;
+package ecommerce.database;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
