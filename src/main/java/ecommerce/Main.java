@@ -3,41 +3,36 @@ package ecommerce;
 import ecommerce.commands.AddProduct;
 import ecommerce.commands.Command;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    public static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
 
-
-        List<Command> listaKomend = new ArrayList<>(
+        List<Command> commandList = new ArrayList<>(
                 List.of(
                         new AddProduct()
-                )
-        );
-        String komenda;
+                        //new ProductList()
+                ));
+        String command;
         do {
-            System.out.println("Lista dostepnych komend:");
-            for (int i = 0; i < listaKomend.size(); i++) {
+            System.out.println("List of the available commands:");
+            for (int i = 0; i < commandList.size(); i++) {
 
 
-                System.out.println((i + 1) + ". " + listaKomend.get(i).getKomenda());
+                System.out.println((i + 1) + ". " + commandList.get(i).getKomenda());
             }
-            System.out.println("Podaj komende:");
-            komenda = Command.scanner.nextLine();
+            System.out.println("Choose one of the above commands");
+            command = Command.scanner.nextLine();
 
-            for (Command dostepnaKomenda : listaKomend) {
-                if (dostepnaKomenda.getKomenda().equalsIgnoreCase(komenda)) {
-                    dostepnaKomenda.obsluga();
+            for (Command availableCommand : commandList) {
+                if (availableCommand.getKomenda().equalsIgnoreCase(command)) {
+                    availableCommand.obsluga();
 
-                    Optional<Command> followUpCommand = dostepnaKomenda.getFollowUpCommand();
+                    Optional<Command> followUpCommand = availableCommand.getFollowUpCommand();
                     followUpCommand.ifPresent(Command::obsluga);
+
                 }
             }
-        } while (!komenda.equalsIgnoreCase("exit"));
+        } while (!command.equalsIgnoreCase("exit"));
     }
 }

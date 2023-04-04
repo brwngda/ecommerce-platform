@@ -20,15 +20,4 @@ public class DataAcessObject<T> {
         }
     }
 
-    public List<T> findAll(Class<T> tClass) {
-        List<T> list = new ArrayList<>();
-        try (Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()) {
-            TypedQuery<T> request = session.createQuery("FROM " + tClass.getName(), tClass);
-
-            list.addAll(request.getResultList());
-        } catch (Exception e) {
-            System.err.println("Błąd: " + e);
-        }
-        return list;
-    }
 }

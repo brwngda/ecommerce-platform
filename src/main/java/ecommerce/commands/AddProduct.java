@@ -11,7 +11,7 @@ public class AddProduct implements Command {
 
     @Override
     public String getKomenda() {
-        return "Add new product";
+        return "Add product";
     }
 
     @Override
@@ -32,10 +32,10 @@ public class AddProduct implements Command {
 
         System.out.println("Enter the price");
         String priceString = Command.scanner.nextLine();
-        Double price = Double.parseDouble(priceString);
+        double price = Double.parseDouble(priceString);
 
 
-        Product product = Product.builder()
+        Product.builder()
                 .name(name)
                 .description(description)
                 .size(size)
