@@ -7,6 +7,7 @@ import java.util.Set;
 
 @Data
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 
@@ -17,8 +18,10 @@ public class Product {
 
     private String name;
     private String description;
-    private String size;
-    private String sex;
+    @Enumerated(EnumType.STRING)
+    private Size size;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
     private double price;
 
     @ManyToOne
