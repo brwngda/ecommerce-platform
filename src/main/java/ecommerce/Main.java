@@ -2,6 +2,7 @@ package ecommerce;
 
 import ecommerce.commands.AddProduct;
 import ecommerce.commands.Command;
+import ecommerce.commands.ListProduct;
 
 import java.util.*;
 
@@ -10,8 +11,8 @@ public class Main {
 
         List<Command> commandList = new ArrayList<>(
                 List.of(
-                        new AddProduct()
-                        //new ProductList()
+                        new AddProduct(),
+                        new ListProduct()
                 ));
         String command;
         do {

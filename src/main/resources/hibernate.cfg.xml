@@ -12,13 +12,11 @@
 
         <!-- MODELS DEFINITION -->
         <mapping class="ecommerce.model.CartItem"/>
-        <mapping class="ecommerce.model.Gender"/>
         <mapping class="ecommerce.model.Order"/>
         <mapping class="ecommerce.model.OrderItem"/>
         <mapping class="ecommerce.model.Product"/>
         <mapping class="ecommerce.model.ProductCategory"/>
         <mapping class="ecommerce.model.ProductInventory"/>
-        <mapping class="ecommerce.model.Size"/>
         <mapping class="ecommerce.model.User"/>
     </session-factory>
 </hibernate-configuration>
