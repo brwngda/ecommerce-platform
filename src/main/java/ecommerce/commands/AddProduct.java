@@ -1,5 +1,6 @@
 package ecommerce.commands;
 
+import ecommerce.database.DataAccessObject;
 import ecommerce.model.Gender;
 import ecommerce.model.Product;
 import ecommerce.model.Size;
@@ -8,6 +9,7 @@ import java.util.Optional;
 
 public class AddProduct implements Command {
 
+    DataAccessObject<Product> dao = new DataAccessObject<Product>();
 
     @Override
     public String getKomenda() {
@@ -35,7 +37,7 @@ public class AddProduct implements Command {
         double price = Double.parseDouble(priceString);
 
 
-        Product.builder()
+        Product product = Product.builder()
                 .name(name)
                 .description(description)
                 .size(size)
@@ -43,6 +45,7 @@ public class AddProduct implements Command {
                 .price(price)
                 .build();
 
+        dao.insert(product);
     }
 
     @Override

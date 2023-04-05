@@ -30,5 +30,5 @@ public class OrderItem {
     @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Order order;
+    private Zamowienie zamowienie;
 }

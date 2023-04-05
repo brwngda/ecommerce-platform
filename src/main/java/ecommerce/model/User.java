@@ -34,5 +34,5 @@ public class User {
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Set<Order> orders;
+    private Set<Zamowienie> zamowienies;
 }

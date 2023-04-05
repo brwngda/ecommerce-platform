@@ -12,7 +12,7 @@
 
         <!-- MODELS DEFINITION -->
         <mapping class="ecommerce.model.CartItem"/>
-        <mapping class="ecommerce.model.Order"/>
+        <mapping class="ecommerce.model.Zamowienie"/>
         <mapping class="ecommerce.model.OrderItem"/>
         <mapping class="ecommerce.model.Product"/>
         <mapping class="ecommerce.model.ProductCategory"/>
