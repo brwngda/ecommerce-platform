@@ -6,9 +6,9 @@ import java.util.Scanner;
 public interface Command {
     Scanner scanner = new Scanner(System.in);
 
-    String getKomenda();
+    String getCommand();
 
-    void obsluga();
+    void handling();
 
     Optional<Command> getFollowUpCommand();
 }

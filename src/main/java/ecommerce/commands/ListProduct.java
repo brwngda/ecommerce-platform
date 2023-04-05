@@ -10,12 +10,12 @@ public class ListProduct implements Command {
     DataAccessObject<Product> dao = new DataAccessObject<Product>();
 
     @Override
-    public String getKomenda() {
+    public String getCommand() {
         return "Product list";
     }
 
     @Override
-    public void obsluga() {
+    public void handling() {
         List<Product> products = dao.findAll(Product.class);
         products.forEach(System.out::println);
     }
