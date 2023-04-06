@@ -13,7 +13,8 @@ public class Main {
                         new ListProduct(),
                         new UpdateProduct(),
                         new DeleteProduct(),
-                        new FindProductById()
+                        new FindProductById(),
+                        new AddProductCategory()
                 ));
         String command;
         do {
