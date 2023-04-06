@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class DataAccessObject<T> {
 
@@ -22,7 +23,7 @@ public class DataAccessObject<T> {
         }
     }
 
-    // READ
+    // READ - LIST
     public List<T> findAll(Class<T> tClass) {
         List<T> list = new ArrayList<>();
         try (Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()) {
@@ -34,6 +35,19 @@ public class DataAccessObject<T> {
         }
         return list;
     }
+
+    // READ - FIND BY ID
+    public Optional<T> find(Class<T> tClass, Long id) {
+        try (Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()) {
+            T entity = session.get(tClass, id);
+
+            return Optional.ofNullable(entity);
+        } catch (Exception ioe) {
+            System.err.println("Error: " + ioe);
+        }
+        return Optional.empty();
+    }
+
 
     // UPDATE
     public void update(Class<T> tClass, Long id, T updatedEntity) {

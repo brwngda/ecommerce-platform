@@ -12,7 +12,8 @@ public class Main {
                         new AddProduct(),
                         new ListProduct(),
                         new UpdateProduct(),
-                        new DeleteProduct()
+                        new DeleteProduct(),
+                        new FindProductById()
                 ));
         String command;
         do {
