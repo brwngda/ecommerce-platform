@@ -4,7 +4,7 @@ import ecommerce.commands.*;
 
 import java.util.*;
 
-public class Main {
+public class MainCompany {
     public static void main(String[] args) {
 
         List<Command> commandList = new ArrayList<>(
